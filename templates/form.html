@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predict Crop</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">🌿 Krishi AI -  Crop Recommender</div>
+    <ul class="nav-links">
+      <li><a href="{{ url_for('index') }}" > <i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#"><i class="fas fa-seedling"></i> Leaf Disease</a></li>
+      <li><a href="{{ url_for('about') }}"><i class="fas fa-info-circle"></i> About</a></li>
+    </ul>
+  </nav>
+
+  <div class="form-section">
+    <h2><i class="fas fa-leaf"></i> Enter Soil & Climate Details</h2>
+    <form action="/predict" method="POST">
+      <input type="number" name="N" placeholder="🌿 Nitrogen level (N)" required>
+      <input type="number" name="P" placeholder="🌾 Phosphorus level (P)" required>
+      <input type="number" name="K" placeholder="🪴 Potassium level (K)" required>
+      <input type="number" name="temperature" placeholder="🌡️ Temperature (°C)" required>
+      <input type="number" name="humidity" placeholder="💧 Humidity (%)" required>
+      <input type="number" name="ph" placeholder="🧪 pH Value" required>
+      <input type="number" name="rainfall" placeholder="🌧️ Rainfall (mm)" required>
+      <button type="submit" class="btn">Predict <i class="fas fa-seedling"></i></button>
+    </form>
+
+    {% if result %}
+    <div class="prediction-result">
+      <h3>🌱 Recommended Crop to grow:</h3>
+      <p>{{ result }}</p>
+    </div>
+    {% endif %}
+  </div>
+
+  <footer class="footer">
+    <p>Made with ❤️ by <strong>Mr Saurabh</strong></p>
+    <div class="footer-icons">
+      <a href="https://github.com/mrsaurabh009"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/mrsaurabh009/"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <p class="footer-note">Empowering farmers through AI - Crop Recommendation System</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crop Recommendation</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">🌿 Krishi AI - Crop Recommender</div>
+    <ul class="nav-links">
+      <li><a href="{{ url_for('index') }}" > <i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#"><i class="fas fa-seedling"></i> Leaf Disease</a></li>
+      <li><a href="{{ url_for('about') }}"><i class="fas fa-info-circle"></i> About</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero-section">
+    <h1>Grow Smarter with AI 🌾</h1>
+    <p>This System is responsible to recommend the best crops to farmers
+      based on soilconditions, weather patterns, and historical data. </p>
+    <a href="{{ url_for('form') }}" class="btn">Get Started <i class="fas fa-arrow-right"></i></a>
+  </header>
+
+  <section class="features">
+    <div class="card">
+      <i class="fas fa-seedling fa-3x"></i>
+      <h3>Smart Prediction</h3>
+      <p>AI-powered crop prediction using soil and weather metrics.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-leaf fa-3x"></i>
+      <h3>Eco-Friendly</h3>
+      <p>Boost your yield while preserving nature.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-cloud-sun fa-3x"></i>
+      <h3>Climate Aware</h3>
+      <p>Tailored predictions based on your local climate conditions.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Made with ❤️ by <strong>Saurabh Kumar</strong></p>
+    <div class="footer-icons">
+      <a href="https://github.com/mrsaurabh009"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/mrsaurabh009/"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <p class="footer-note">Empowering farmers through AI - Crop Recommendation System</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Crop Recommendation System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">🌿 Krishi AI -  Crop Recommender</div>
+    <ul class="nav-links">
+      <li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#"><i class="fas fa-leaf"></i> Leaf Disease</a></li>
+      <li><a href="{{ url_for('about') }}"><i class="fas fa-info-circle"></i> About</a></li>
+    </ul>
+  </nav>
+
+  <section class="about-section">
+    <div class="about-container">
+      <h1>About this System</h1>
+      <p>
+        In today’s world, agriculture is at the heart of the global economy. With rapid advancements in technology, we now have the opportunity to harness the power of machine learning to revolutionize traditional farming. Our <strong>Crop Recommendation System</strong> is designed to help farmers make data-driven decisions by analyzing <strong>soil quality</strong>, <strong>climate conditions</strong>, and <strong>historical crop yields</strong>.
+      </p>
+
+      <h2>Objectives</h2>
+      <ul>
+        <li>Provide farmers with real-time, personalized crop recommendations.</li>
+        <li>Leverage soil and climate data to maximize yield and profitability.</li>
+        <li>Create a sustainable and scalable smart farming solution.</li>
+      </ul>
+
+      <h2>Highlights</h2>
+      <ul>
+        <li><i class="fas fa-brain"></i> AI-powered predictions</li>
+        <li><i class="fas fa-map-marker-alt"></i> Location-based crop analysis</li>
+        <li><i class="fas fa-seedling"></i> Tailored suggestions based on field data</li>
+      </ul>
+
+      <h2>Future Enhancement</h2>
+      <ul>
+        <li><i class="fas fa-seedling"></i> Plant Leaf Disease Detection</li>
+        <li><i class="fas fa-brain"></i> More Accurate Prediction</li>
+      </ul>
+
+      <h2>Institution</h2>
+      <p>D Y Patil University Pune, Ambi - School of Engineering & Technology</p>
+      <p>Give Feedback on LinkedIn or GitHub.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Made with <i class="fas fa-heart"></i> by <strong> Mr Saurabh</strong></p>
+    <div class="footer-icons">
+      <a href="https://github.com/mrsaurabh009"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/mrsaurabh009/"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <p class="footer-note">Empowering farmers through AI - Crop Recommendation System</p>
+  </footer>
+</body>
+</html>
