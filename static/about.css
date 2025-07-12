@@ -1,115 +1,187 @@
-/* ==== GENERAL ==== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4fdf4;
-    color: #2d2d2d;
-    margin: 0;
-    padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9fdf9;
+  color: #333;
+  line-height: 1.7;
+  scroll-behavior: smooth;
+}
+
+
+.navbar {
+  background: #1b5e20;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.6rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.nav-toggle {
+  font-size: 1.6rem;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.nav-links li a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+
+.about-section {
+  padding: 4rem 1.5rem;
+  background: #ffffff;
+}
+
+.about-container {
+  max-width: 1000px;
+  margin: auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.about-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.2rem;
+  color: #1b5e20;
+}
+
+.about-container h2 {
+  margin-top: 2rem;
+  color: #388e3c;
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.about-container p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.about-container ul {
+  margin-left: 1rem;
+  padding-left: 1rem;
+}
+
+.about-container ul li {
+  margin-bottom: 0.8rem;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.about-container ul li i {
+  color: #2e7d32;
+  min-width: 20px;
+}
+
+
+.footer {
+  background-color: #1b5e20;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+}
+
+.footer-icons a {
+  color: white;
+  margin: 0 10px;
+  font-size: 1.3rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: #a5d6a7;
+  transform: scale(1.1);
+}
+
+.footer-note {
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+
+.fade-in-up {
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
   }
-  
-  h1, h2 {
-    color: #2e7d32;
-  }
-  
-  ul {
-    padding-left: 20px;
-  }
-  
-  /* ==== NAVBAR ==== */
-  .navbar {
-    background-color: #388e3c;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    color: white;
-  }
-  
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
+
   .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    margin: 0;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: #1b5e20;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
   }
-  
-  .nav-links li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
+
+  .nav-links.active {
+    max-height: 300px;
+    padding: 1rem 0;
   }
-  
-  .nav-links li a:hover {
-    color: #c8e6c9;
-  }
-  
-  /* ==== ABOUT SECTION ==== */
-  .about-section {
-    padding: 4rem 2rem;
-    background: linear-gradient(to bottom right, #ffffff, #e8f5e9);
-    min-height: 100vh;
-  }
-  
-  .about-container {
-    max-width: 800px;
-    margin: auto;
-    background: white;
-    padding: 2rem 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  }
-  
+
+  .fade-in-up {
+  animation: fadeInUp 0.8s ease-in-out both;
+}
+
   .about-container h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 2rem;
   }
-  
-  .about-container h2 {
-    font-size: 1.5rem;
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
-  }
-  
+
+  .about-container p,
   .about-container ul li {
-    margin-bottom: 0.5rem;
-  }
-  
-  .about-container p {
     font-size: 1rem;
-    line-height: 1.6;
   }
-  
-  /* ==== FOOTER ==== */
-  .footer {
-    background-color: #2e7d32;
-    color: white;
-    text-align: center;
-    padding: 1.5rem 1rem;
-    margin-top: 3rem;
-  }
-  
-  .footer-icons {
-    margin: 1rem 0;
-  }
-  
-  .footer-icons a {
-    margin: 0 10px;
-    color: white;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
-  }
-  
-  .footer-icons a:hover {
-    color: #a5d6a7;
-  }
-  
-  .footer-note {
-    font-size: 0.9rem;
-    color: #c8e6c9;
-  }
-  
+}
